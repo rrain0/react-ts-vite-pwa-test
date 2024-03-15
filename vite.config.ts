@@ -39,14 +39,17 @@ const pwaOptions: Partial<VitePWAOptions> = {
     type: 'module',
     navigateFallback: 'index.html',
   },
-  srcDir: 'src/service-worker',
-  filename: 'service-worker.ts',
   strategies: 'injectManifest',
-  injectManifest: {
+  /* injectManifest: {
     minify: false,
     enableWorkboxModulesLogs: true,
-  },
-  manifest: manifest,
+  }, */
+  srcDir: 'src/service-worker',
+  filename: 'service-worker.ts',
+  injectRegister: 'script',
+  manifest: false,
+  //manifest: manifest,
+  //manifest: false,
   base: '/',
   includeAssets: ['favicon.svg'],
 }

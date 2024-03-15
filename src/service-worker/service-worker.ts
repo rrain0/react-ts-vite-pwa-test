@@ -20,5 +20,10 @@ registerRoute(new NavigationRoute(
   { allowlist },
 ))
 
+console.log('msgFromServiceWorker')
+const selfWbManifest = self.__WB_MANIFEST
+console.log(selfWbManifest)
+
+
 self.skipWaiting()
 clientsClaim()
