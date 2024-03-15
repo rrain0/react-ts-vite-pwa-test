@@ -40,16 +40,24 @@ const pwaOptions: Partial<VitePWAOptions> = {
     navigateFallback: 'index.html',
   },
   strategies: 'injectManifest',
-  /* injectManifest: {
-    minify: false,
-    enableWorkboxModulesLogs: true,
-  }, */
   srcDir: 'src/service-worker',
   filename: 'service-worker.ts',
+  
+  // inject manifest from upper object
+  /*
+   injectManifest: {
+   minify: false,
+   enableWorkboxModulesLogs: true,
+   },
+   manifest: manifest,
+   */
+  
+  // do not inject manifest, only service worker,
+  // so you can write your own link to manifest in index.html
+  // https://vite-pwa-org.netlify.app/guide/service-worker-without-pwa-capabilities
   injectRegister: 'script',
   manifest: false,
-  //manifest: manifest,
-  //manifest: false,
+  
   base: '/',
   includeAssets: ['favicon.svg'],
 }
