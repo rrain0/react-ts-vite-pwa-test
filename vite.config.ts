@@ -4,7 +4,7 @@ import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 
 
 
-
+/*
 const manifest: VitePWAOptions['manifest'] = {
   name: 'PWA Inject Manifest',
   short_name: 'PWA Inject',
@@ -28,6 +28,7 @@ const manifest: VitePWAOptions['manifest'] = {
     },
   ],
 }
+*/
 
 
 
