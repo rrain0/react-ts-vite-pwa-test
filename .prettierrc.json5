@@ -1,0 +1,30 @@
+// config: https://prettier.io/docs/en/configuration
+// options: https://prettier.io/docs/en/options.html
+{
+  semi: false,
+  printWidth: 120,
+  tabWidth: 2,
+  useTabs: false,
+  endOfLine: 'lf',
+  trailingComma: 'es5',
+  
+  
+  jsxSingleQuote: true,
+  // jsx single attr per line
+  singleAttributePerLine: true,
+  
+  // parens around arrow fun params
+  arrowParens: 'avoid',
+  singleQuote: true,
+  
+  // JSX open tag's last angle bracket placement
+  bracketSameLine: true,
+  // quotes in objects
+  quoteProps: 'as-needed',
+  
+  // spaces between brackets in object literals
+  bracketSpacing: true,
+  
+  // format code that is embedded in other file formats, string, tagged literal
+  embeddedLanguageFormatting: 'auto'
+}
