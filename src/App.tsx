@@ -1,29 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-export const foo = () => {}
 
-function App() {
+
+function App(){
   const [count, setCount] = useState(0)
   
-  
-  
-  const a: number[] = [1]
-  const b: Array<number> = [1]
-  
-  
-  const c = useMemo(
-    ()=>[...a,...b],
-    [a]
-  )
-  
-  
-  console.log(a,b,c)
-  
-  
-
   return (
     <>
       <div>
@@ -49,8 +33,8 @@ function App() {
       <h1>Vite + React + TS</h1>
       <div className='card'>
         <form>
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-      </form>
+          <button onClick={()=>setCount(count=>count + 1)}>count is {count}</button>
+        </form>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
