@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+
 
 /*
 const manifest: VitePWAOptions['manifest'] = {
@@ -59,7 +62,13 @@ const pwaOptions: Partial<VitePWAOptions> = {
   includeAssets: ['favicon.svg'],
 }
 
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), VitePWA(pwaOptions)],
+  plugins: [
+    react(),
+    VitePWA(pwaOptions),
+    tsconfigPaths(),
+  ],
 })

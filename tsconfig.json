@@ -1,24 +1,48 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
+    "target": "ESNext", // simply means which version of ECMAScript you're using to code
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    
 
+    
+    
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true, // allow only modules (files with import/export). At least you need 'export {}'.
     "noEmit": true,
     "jsx": "react-jsx",
+    
+    // path aliases
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "@res/*": ["src/res/*"],
+      "@util/*": ["src/util/*"],
+    },
 
+    
+    
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "exactOptionalPropertyTypes": true, // '?' means absence of property but not undefined
+    "downlevelIteration": true, // use [...anyIterator]
+    "noImplicitAny": false, // нет неявных any
+    "noImplicitOverride": true, // при переопределении всегда надо указывать override
+    "allowUnreachableCode": true, // разрешить код после return, который никогда не выполнится
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true,
+    
+    "plugins": [
+      { "name": "typescript-plugin-css-modules" }
+    ],
+    
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

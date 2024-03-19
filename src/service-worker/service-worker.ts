@@ -7,7 +7,7 @@ declare const self: ServiceWorkerGlobalScope
 // self.__WB_MANIFEST is default injection point
 precacheAndRoute(self.__WB_MANIFEST)
 
-// clean old assets
+// clean old res
 cleanupOutdatedCaches()
 
 let allowlist: undefined | RegExp[]
