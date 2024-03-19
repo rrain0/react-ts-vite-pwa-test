@@ -4,6 +4,7 @@ import globals from 'globals'
 import js from '@eslint/js'
 import ts from 'typescript-eslint'
 import react from 'eslint-plugin-react'
+import reactConfigRecommended from 'eslint-plugin-react/configs/recommended.js'
 import reactHooks from 'eslint-plugin-react-hooks'
 import importPlugin from 'eslint-plugin-import'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
@@ -30,25 +31,27 @@ const compat = new FlatCompat({
 
 export default [
   ...ts.config(
-    js.configs.recommended,
-    ...ts.configs.recommended,
+    js.configs.recommended, // works
+    ...ts.configs.recommended, // works
   ),
-  ...compat.extends('plugin:react/recommended'),
+  ...compat.extends('plugin:react/recommended'), // works
   // must be after react.configs.recommended ('plugin:react/recommended')
-  ...compat.extends('plugin:react/jsx-runtime'),
-  ...compat.extends('plugin:react-hooks/recommended'),
-  ...compat.extends('plugin:import/errors'),
-  ...compat.extends('plugin:import/warnings'),
-  ...compat.extends('plugin:jsx-a11y/recommended'),
+  ...compat.extends('plugin:react/jsx-runtime'), // seems to be working
+  ...compat.extends('plugin:react-hooks/recommended'), // works
+  ...compat.extends('plugin:import/errors'), // works
+  ...compat.extends('plugin:import/warnings'), // works
+  
+  ...compat.extends('plugin:jsx-a11y/recommended'), // NOT work
   
   // prettier must be last
-  prettierConfigRecommended,
+  prettierConfigRecommended, // works
   
   {
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
+        ...globals.serviceworker,
         ...globals.browser,
       },
       parser: ts.parser,
@@ -60,47 +63,21 @@ export default [
         }
       },
     },
-    /*extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:react/recommended',
-      'plugin:react/jsx-runtime',
-      'plugin:react-hooks/recommended',
-      // https://www.npmjs.com/package/eslint-plugin-react-refresh
-      // Validate that your components can safely be updated with fast refresh.
-      'react-refresh',
-      'plugin:import/errors',
-      'plugin:import/warnings',
-      'plugin:jsx-a11y/recommended',
-    ],*/
     files: ['**/*.{ts,cts,mts,tsx,d.ts,js,cjs,mjs,jsx}'],
     plugins: {
-      reactRefresh,
-      //react,
-      //importPlugin,
-      //jsxA11y,
-      //prettier,
+      'react-refresh': reactRefresh, // works
+      'react': react,
+      'import': importPlugin,
+      'jsx-a11y': jsxA11y,
+      'prettier': prettier,
     },
-    //parser: '@typescript-eslint/parser',
-    /*plugins: [
-      'react-refresh',
-      'react',
-      'import',
-      'jsx-a11y',
-    ],*/
-    /*parserOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true
-      }
-    },*/
     rules: {
-      'reactRefresh/only-export-components': [
+      'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
       'react/jsx-no-target-blank': 'off',
+      'react/function-component-definition': 'error',
     },
     settings: {
       'import/resolver': {

@@ -2,8 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 
-
-
 /*
 const manifest: VitePWAOptions['manifest'] = {
   name: 'PWA Inject Manifest',
@@ -30,8 +28,6 @@ const manifest: VitePWAOptions['manifest'] = {
 }
 */
 
-
-
 const pwaOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   devOptions: {
@@ -43,7 +39,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   strategies: 'injectManifest',
   srcDir: 'src/service-worker',
   filename: 'service-worker.ts',
-  
+
   // inject manifest from upper object
   /*
    injectManifest: {
@@ -52,25 +48,18 @@ const pwaOptions: Partial<VitePWAOptions> = {
    },
    manifest: manifest,
    */
-  
+
   // do not inject manifest, only service worker,
   // so you can write your own link to manifest in index.html
   // https://vite-pwa-org.netlify.app/guide/service-worker-without-pwa-capabilities
   injectRegister: 'script',
   manifest: false,
-  
+
   base: '/',
   includeAssets: ['favicon.svg'],
 }
 
-
-
-
-
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    VitePWA(pwaOptions),
-  ],
+  plugins: [react(), VitePWA(pwaOptions)],
 })

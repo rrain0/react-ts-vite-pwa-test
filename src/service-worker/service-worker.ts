@@ -11,19 +11,14 @@ precacheAndRoute(self.__WB_MANIFEST)
 cleanupOutdatedCaches()
 
 let allowlist: undefined | RegExp[]
-if (import.meta.env.DEV)
-  allowlist = [/^\/$/]
+if (import.meta.env.DEV) allowlist = [/^\/$/]
 
 // to allow work offline
-registerRoute(new NavigationRoute(
-  createHandlerBoundToURL('index.html'),
-  { allowlist },
-))
+registerRoute(new NavigationRoute(createHandlerBoundToURL('index.html'), { allowlist }))
 
 console.log('msgFromServiceWorker')
 const selfWbManifest = self.__WB_MANIFEST
 console.log(selfWbManifest)
-
 
 self.skipWaiting()
 clientsClaim()
