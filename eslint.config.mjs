@@ -172,6 +172,6 @@ export default [
   },
   // !!! ignores must be in a standalone object to work globally
   {
-    ignores: ['dist', 'dev-dist', 'eslint.config.mjs'],
+    ignores: ['dist', 'dev-dist'],
   }
 ]

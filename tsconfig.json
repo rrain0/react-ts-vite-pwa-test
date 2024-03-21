@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext", // simply means which version of ECMAScript you're using to code
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     
