@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import reactLogo from '@res/img/react.svg'
 import viteLogo from '/vite.svg'
+import reactLogo from '@res/img/react.svg'
+import PwaLogo from '@res/img/PWA-logo.svg?react'
+import tsLogo from '@res/img/Typescript-logo.png'
 import './App.css'
 
 
@@ -16,7 +18,7 @@ function App(){
           target='_blank'>
           <img
             src={viteLogo}
-            className='logo'
+            className='logo vite'
             alt='Vite logo'
           />
         </a>
@@ -30,10 +32,30 @@ function App(){
           />
         </a>
       </div>
-      <h1>Vite + React + TS</h1>
-      <div className='card'>
+      <div>
+        <a
+          href="https://web.dev/explore/progressive-web-apps"
+          target="_blank">
+          <PwaLogo className="logo pwa" style={{ maxWidth: 'fit-content' }} />
+        </a>
+        <a
+          href="https://www.typescriptlang.org"
+          target="_blank">
+          <img
+            src={tsLogo}
+            className="logo typescript"
+            alt="Typescript logo"
+          />
+        </a>
+      </div>
+      <h1>Vite + React + TS + PWA</h1>
+      <div className="card">
         <form>
-          <button onClick={()=>setCount(count=>count + 1)}>count is {count}</button>
+          <button
+            type="button"
+            onClick={() => setCount(count => count + 1)}>
+            count is {count}
+          </button>
         </form>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

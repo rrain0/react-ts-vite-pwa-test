@@ -14,7 +14,10 @@ let allowlist: undefined | RegExp[]
 if (import.meta.env.DEV) allowlist = [/^\/$/]
 
 // to allow work offline
-registerRoute(new NavigationRoute(createHandlerBoundToURL('index.html'), { allowlist }))
+registerRoute(new NavigationRoute(
+  createHandlerBoundToURL('index.html'),
+  { allowlist: allowlist! }
+))
 
 console.log('msgFromServiceWorker')
 const selfWbManifest = self.__WB_MANIFEST
