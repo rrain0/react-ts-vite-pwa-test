@@ -4799,10 +4799,10 @@ vite-plugin-checker@^0.6.4:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^3.0.2"
 
-vite-plugin-pwa@^0.19.3:
-  version "0.19.5"
-  resolved "https://registry.yarnpkg.com/vite-plugin-pwa/-/vite-plugin-pwa-0.19.5.tgz#50692c46abc74d161cdd18c5cf8d21e5ce68563e"
-  integrity sha512-3xJEc2Gmq6SBf730UAV1N2/MqOm+MiyvaLToSTglg+pH9b9qm666yPVxrBBlcOhGoJJWjJpu+Z9tROKek2CODg==
+vite-plugin-pwa@^0.19.6:
+  version "0.19.6"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pwa/-/vite-plugin-pwa-0.19.6.tgz#8a12db16b13c946de38cc6b00f39cc24b070df0d"
+  integrity sha512-3hoxgrDGRzh1vidcZ/GSKXBDiZqbL8DRHXkJgkbJ2Xp3+/P4nau6118L5XlJJsm/wXPpwc/JpDj6Mf073s69+A==
   dependencies:
     debug "^4.3.4"
     fast-glob "^3.3.2"
@@ -4828,7 +4828,7 @@ vite-tsconfig-paths@^4.3.2:
     globrex "^0.1.2"
     tsconfck "^3.0.3"
 
-vite@^5.1.6:
+vite@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/vite/-/vite-5.2.2.tgz#b98f8de352d22e21d99508274ddd053ef82bf238"
   integrity sha512-FWZbz0oSdLq5snUI0b6sULbz58iXFXdvkZfZWR/F0ZJuKTSPO7v72QPXt6KqYeMFb0yytNp6kZosxJ96Nr/wDQ==

@@ -28,8 +28,10 @@
     
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    //"noUnusedLocals": true,
+    //"noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": false, // allow access obj.prop from indexed type
+    "noUncheckedIndexedAccess": false, // add undefined when get props from indexed type
     "exactOptionalPropertyTypes": true, // '?' means absence of property but not undefined
     "downlevelIteration": true, // use [...anyIterator]
     "noImplicitAny": false, // нет неявных any
